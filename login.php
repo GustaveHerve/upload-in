@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create an account</title>
+    <title>Login</title>
     <style>
         #passwdErr, #emailErr {
             color: red;
@@ -16,12 +16,13 @@
 <body>
 <?php
     require 'formvalidation.php';
-    require 'sql.php';
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
-    $email = $passwd = $accountErr = "";
+
+    $accountErr = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
+        $email = $passwd = "";
         if (!empty($_POST["email"]))
             $email = test_input($_POST["email"]);
         
@@ -32,22 +33,24 @@
 
         if ($conn->connect_error)
             die("Connection failed: " . $conn->connect_error);
-        
-        if (!user_alreadyexists($conn, $email))
-            addUser($conn, $email, $passwd);
-        else
-            $accountErr = "This email is associated to an existing account.";
+
+        $sql = "SELECT * FROM MyGuests
+        WHERE email='$email'";
+
+        $res = $conn->query($sql);
+        if (!check_login($conn, $email, $passwd))
+            $accountErr = "No account with this email/password combination were found";
 
         $conn->close();
     }
 ?>
 
-    <script src="register_validation.js"></script>
-    <h1>Create an account</h1>
-    <form id="registerForm" action="register.php" method="post">
+    <script src="login_validation.js"></script>
+    <h1>Login</h1>
+    <form id="loginForm" action="login.php" method="post">
         <div>
             <label for="email">Email address:</label><br>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" <?php if (isset($_POST['email'])) echo 'value="'.$_POST['email'].'"'; ?>) required>
             <span id="emailErr"><?php echo $accountErr ?></span><br>
         </div>
         <div>
@@ -55,7 +58,7 @@
             <input type="password" id="passwd" name="passwd" placeholder="Enter your password">
             <span id="passwdErr"></span><br>
         </div>
-        <button type="button" onclick="validateInput()">Register</button>
+        <button type="button" onclick="validateInput()">Login</button>
     </form>
 </body>
 </html>
