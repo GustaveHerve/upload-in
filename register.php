@@ -42,7 +42,7 @@
     }
 ?>
 
-    <script src="register_validation.js"></script>
+    <script src="scripts/register_validation.js"></script>
     <h1>Create an account</h1>
     <form id="registerForm" action="register.php" method="post">
         <div>

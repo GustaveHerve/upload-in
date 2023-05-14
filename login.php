@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION["user"]))
+    header('Location: userspace.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,12 +45,19 @@
         $res = $conn->query($sql);
         if (!check_login($conn, $email, $passwd))
             $accountErr = "No account with this email/password combination were found";
+        else
+        {
+            $_SESSION['user'] = $email;
+            $conn->close();
+            header('Location: userspace.php');
+            exit();
+        }
 
         $conn->close();
     }
 ?>
 
-    <script src="login_validation.js"></script>
+    <script src="scripts/login_validation.js"></script>
     <h1>Login</h1>
     <form id="loginForm" action="login.php" method="post">
         <div>
