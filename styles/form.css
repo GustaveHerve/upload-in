@@ -1,0 +1,73 @@
+#passwdErr, #emailErr {
+    color: red;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1 {
+    margin-left: 20px;
+    font-size: 40px;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+div.formbox {
+    padding: 50px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    /*
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    */
+    display: block;
+    margin: 100px auto;
+    width: 470px;
+}
+
+div.formbox h1 {
+    margin: 0;
+    margin-bottom: 45px;
+}
+
+label {
+    font-size: smaller;
+}
+
+div.formbox input {
+    margin-bottom: 20px;
+    padding: 13px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+div.buttons {
+    margin-top: 45px;
+    text-align: center;
+}
+
+div.formbox form button {
+    box-sizing: border-box;
+    border: 0px;
+    border-radius: 150px;
+    font-size: large;
+    color: white;
+    background-color:rgb(98, 109, 227);
+    padding: 15px;
+    width: 90%;
+}

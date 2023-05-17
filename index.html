@@ -8,61 +8,18 @@
 </head>
 <body>
     <header>
-        <h1>Upload'in<br>your<br><span style="color:rgb(98, 109, 227);"><span id="catchphrase"></span><span id="cursor"></span></span></h1>
+        <h1>Upload'<span style="color:rgb(98, 109, 227)">in</span><br>your<br><span style="color:rgb(98, 109, 227);"><span id="catchphrase"></span><span id="cursor"></span></span></h1>
         <nav>
             <a href="register.php">Register</a>
             <a href="login.php">Log in</a>
         </nav>
+
     </header>
+    <h2>What is Upload'in ?</h2>
+    <p>Upload'in is a cloud-based storage web service. It is free and simple to use,
+        all you need is a free account.
+    </p>
 
-    <script>
-        const arr = 
-        ["files", "memories", "photos", "documents", "videos", "work",
-         "homework", "drawings", "papers", "essays", "artworks", "texts",
-         "presentations", "projects", "pictures"];
-
-        var i = 0
-        var word = arr[Math.floor(Math.random() * arr.length)];
-        var lastword = word;
-        var speed = 70;
-
-        setInterval(cursorBlink, 500);
-        typingCycle();
-
-        function typingEffect() {
-            if (i < word.length) {
-                document.getElementById("catchphrase").innerText += word.charAt(i);
-                i++;
-                setTimeout(typingEffect, speed);
-            }
-        }
-        function deleteEffect() {
-            let e = document.getElementById("catchphrase");
-            if (e.innerText.length > 0) {
-                e.innerText = e.innerHTML.slice(0, -1);
-                setTimeout(deleteEffect, speed);
-            }
-        }
-        function typingCycle() {
-            i = 0;
-            while (word == lastword)
-                word = arr[Math.floor(Math.random() * arr.length)];
-            lastword = word;
-            speed = 70;
-
-            typingEffect();
-            setTimeout(deleteEffect, speed * word.length + 2500);
-            setTimeout(typingCycle, speed * word.length * 2 + 2550);
-        }
-
-        function cursorBlink() {
-            let cursor = document.getElementById("cursor");
-            if (cursor.innerText.length != 0)
-                cursor.innerText = "";
-            else
-                cursor.innerText = "|";
-        }
-
-    </script>
+    <script src="scripts/typeEffect.js"></script>
 </body>
 </html>

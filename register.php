@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create an account</title>
-    <style>
-        #passwdErr, #emailErr {
-            color: red;
-        }
-        div {
-            margin-bottom: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/form.css">
 </head>
 <body>
 <?php
@@ -43,19 +36,26 @@
 ?>
 
     <script src="scripts/register_validation.js"></script>
-    <h1>Create an account</h1>
-    <form id="registerForm" action="register.php" method="post">
-        <div>
-            <label for="email">Email address:</label><br>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-            <span id="emailErr"><?php echo $accountErr ?></span><br>
-        </div>
-        <div>
-            <label for="passwd">Password:</label><br>
-            <input type="password" id="passwd" name="passwd" placeholder="Enter your password">
-            <span id="passwdErr"></span><br>
-        </div>
-        <button type="button" onclick="validateInput()">Register</button>
-    </form>
+    <header>
+        <h1><a href=index.html>Upload'<span style="color: rgb(98, 109, 227);">in</span></a></h1>
+    </header>
+    <div class="formbox">
+        <h1>Create an account</h1>
+        <form id="registerForm" action="register.php" method="post">
+            <div>
+                <label for="email">Email address:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <span id="emailErr"><?php echo $accountErr ?></span><br>
+            </div>
+            <div>
+                <label for="passwd">Password:</label><br>
+                <input type="password" id="passwd" name="passwd" placeholder="Enter your password">
+                <span id="passwdErr"></span><br>
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="validateInput()">Register</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
