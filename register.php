@@ -37,11 +37,11 @@
 
     <script src="scripts/register_validation.js"></script>
     <header>
-        <h1><a href=index.html>Upload'<span style="color: rgb(98, 109, 227);">in</span></a></h1>
+        <h1><a href=index.php>Upload'<span style="color: rgb(98, 109, 227);">in</span></a></h1>
     </header>
     <div class="formbox">
         <h1>Create an account</h1>
-        <form id="registerForm" action="register.php" method="post">
+        <form id="registerForm" action="register.php" method="post" onsubmit="return validateInput();">
             <div>
                 <label for="email">Email address:</label><br>
                 <input type="email" id="email" name="email" placeholder="Enter your email address" required>
@@ -53,7 +53,7 @@
                 <span id="passwdErr"></span><br>
             </div>
             <div class="buttons">
-                <button type="button" onclick="validateInput()">Register</button>
+                <button type="submit">Register</button>
             </div>
         </form>
     </div>

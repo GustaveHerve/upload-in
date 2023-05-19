@@ -18,8 +18,7 @@ function validateInput()
     else
         clearErr("passwdErr");
 
-    if (isValid)
-        document.getElementById("loginForm").submit();
+    return isValid;
 }
 
 function displayErr(id, message)

@@ -25,14 +25,6 @@ div.formbox {
     box-sizing: border-box;
     border: 1px solid lightgray;
     border-radius: 15px;
-    /*
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    */
     display: block;
     margin: 100px auto;
     width: 470px;
@@ -70,4 +62,9 @@ div.formbox form button {
     background-color:rgb(98, 109, 227);
     padding: 15px;
     width: 90%;
+}
+
+div.formbox form button:hover  {
+    background-color: rgb(138, 145, 229);
+    cursor: pointer;
 }

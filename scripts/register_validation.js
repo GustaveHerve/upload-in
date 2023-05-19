@@ -19,10 +19,8 @@ function validateInput()
     }
     else
         clearErr("passwdErr");
-    if (isValid)
-    {
-        document.getElementById("registerForm").submit();
-    }
+
+    return isValid;
 }
 
 function displayErr(id, message)
