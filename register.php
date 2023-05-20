@@ -25,7 +25,6 @@
 
         if ($conn->connect_error)
             die("Connection failed: " . $conn->connect_error);
-        
         if (!user_alreadyexists($conn, $email))
             addUser($conn, $email, $passwd);
         else

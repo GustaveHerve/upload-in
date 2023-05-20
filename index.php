@@ -8,18 +8,18 @@
 </head>
 <body>
     <div id="first-part">
-    <header>
-        <h1>Upload'<span style="color:rgb(98, 109, 227)">in</span><br>your<br><span style="color:rgb(98, 109, 227);"><span id="catchphrase"></span><span id="cursor"></span></span></h1>
-        <nav>
-            <a href="register.php">Register</a>
-            <a href="login.php">Log in</a>
-        </nav>
-    </header>
+        <header>
+            <h1>Upload'<span style="color:rgb(98, 109, 227)">in</span><br>your<br><span style="color:rgb(98, 109, 227);"><span id="catchphrase"></span><span id="cursor"></span></span></h1>
+            <nav>
+                <a href="register.php">Register</a>
+                <a href="login.php">Log in</a>
+            </nav>
+        </header>
 
-    <h2 id="arrowtext">Discover Upload'in</h2>
-    <div id="arrowcontainer">
-        <a id="arrowcontainer" href="#jumparrow"><img id="arrow" src="images/arrow.png"> </a>
-    </div>
+        <h2 id="arrowtext">Discover Upload'in</h2>
+        <div id="arrowcontainer">
+            <a id="arrowcontainer" href="#jumparrow"><img id="arrow" src="images/arrow.png"> </a>
+        </div>
     </div>
     <!-- Everything in this div is in under the wave -->
     <div id="second-part" class="under-waves">
@@ -39,6 +39,8 @@
             <a href="https://www.flaticon.com/free-icons/navy" title="navy icons">Navy icons created by Freepik - Flaticon</a>
             <a href="https://www.flaticon.com/free-icons/hosting" title="hosting icons">Hosting icons created by Freepik - Flaticon</a>
             <a href="https://www.flaticon.com/free-icons/database" title="database icons">Database icons created by Freepik - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/download" title="download icons">Download icons created by Uniconlabs - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Uniconlabs - Flaticon</a>
         </footer>
     </div>
 

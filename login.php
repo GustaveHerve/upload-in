@@ -32,15 +32,16 @@ if (isset($_SESSION["user"]))
         if ($conn->connect_error)
             die("Connection failed: " . $conn->connect_error);
 
-        $sql = "SELECT * FROM MyGuests
-        WHERE email='$email'";
-
-        $res = $conn->query($sql);
         if (!check_login($conn, $email, $passwd))
             $accountErr = "No account with this email/password combination were found";
         else
         {
+            $query = "SELECT * FROM MyGuests
+            WHERE email='$email'";
+            $res = $conn->query($query);
+
             $_SESSION['user'] = $email;
+            $_SESSION['userID'] = $res->fetch_column();
             $conn->close();
             header('Location: userspace.php');
             exit();
