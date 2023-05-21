@@ -41,6 +41,8 @@
             <a href="https://www.flaticon.com/free-icons/database" title="database icons">Database icons created by Freepik - Flaticon</a>
             <a href="https://www.flaticon.com/free-icons/download" title="download icons">Download icons created by Uniconlabs - Flaticon</a>
             <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Uniconlabs - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/download" title="download icons">Download icons created by itim2101 - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by Freepik - Flaticon</a>
         </footer>
     </div>
 
