@@ -11,8 +11,22 @@
         <header>
             <h1>Upload'<span style="color:rgb(98, 109, 227)">in</span><br>your<br><span style="color:rgb(98, 109, 227);"><span id="catchphrase"></span><span id="cursor"></span></span></h1>
             <nav>
-                <a href="register.php">Register</a>
-                <a href="login.php">Log in</a>
+                <?php
+                session_start();
+                if (!isset($_SESSION['userID']))
+                {
+                    echo '<a href="register.php">Register</a>';
+                    echo '<a href="login.php">Log in</a>';
+                }
+                else
+                {
+                    echo '<div class="profil">';
+                    echo '<div class="profil-mail"><p>' . $_SESSION["user"] . '</p></div>';
+                    echo '<div class="profil-icon"><img src="images/account.png"></div>';
+                    echo '<div id="profil-dropdown"><a href="userspace.php">My storage</a><a href="logout.php">Log out</a></div>';
+                    echo '</div>';
+                }
+                ?>
             </nav>
         </header>
 
@@ -32,20 +46,9 @@
         </div>
 
         <footer>
-            <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Freepik - Flaticon</a><br />
-            <a href="https://www.flaticon.com/free-icons/document" title="document icons">Document icons created by Freepik - Flaticon</a><br />
-            <a href="https://www.flaticon.com/free-icons/cloud-computing" title="cloud computing icons">Cloud computing icons created by Freepik - Flaticon</a><br />
-            <a href="https://www.flaticon.com/free-icons/submarine" title="submarine icons">Submarine icons created by Freepik - Flaticon</a><br />
-            <a href="https://www.flaticon.com/free-icons/navy" title="navy icons">Navy icons created by Freepik - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/hosting" title="hosting icons">Hosting icons created by Freepik - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/database" title="database icons">Database icons created by Freepik - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/download" title="download icons">Download icons created by Uniconlabs - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Uniconlabs - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/download" title="download icons">Download icons created by itim2101 - Flaticon</a>
-            <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by Freepik - Flaticon</a>
+            <a href="credits.html">credits</a>
         </footer>
     </div>
-
     <script src="scripts/typeEffect.js"></script>
 </body>
 </html>

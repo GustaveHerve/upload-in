@@ -60,6 +60,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
 }
 
 h1 {
@@ -77,6 +78,7 @@ span.catchphrase {
 
 nav {
     display: flex;
+    margin-top: 4%;
 }
 
 nav a {
@@ -85,7 +87,6 @@ nav a {
     align-self: flex-start;
     padding: 15px 35px;
     border-radius: 25px;
-    margin-top: 20%;
     margin-right: 30px;
     text-decoration: none;
     font-weight: 900;
@@ -97,6 +98,55 @@ nav a {
 
 nav a:hover {
     background-color: rgb(138, 145, 229);
+}
+.profil {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    flex: 0 1 300px;
+    position: relative;
+}
+
+.profil:hover {
+    color:rgb(98, 109, 227);
+}
+.profil:hover #profil-dropdown {
+    z-index: 1;
+    display: block;
+}
+
+#profil-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    white-space: nowrap;
+    text-align: center;
+    width: 70%;
+}
+
+#profil-dropdown a {
+    display: block;
+    padding: 6px 12px;
+    background-color: rgb(222, 222, 222);
+    text-decoration: none;
+    color: black;
+    border-radius: 0px;
+    width: 100%;
+}
+
+nav #profil-dropdown a:hover {
+    background-color:  rgb(186, 185, 185);
+}
+
+nav .profil .profil-mail, nav .profil .profil-icon {
+    flex: 1 1 230px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+nav .profil-icon img {
+    width: 40px;
 }
 
 .presentation-text {
@@ -130,3 +180,4 @@ nav a:hover {
 footer {
     margin-top: 300px;
 }
+

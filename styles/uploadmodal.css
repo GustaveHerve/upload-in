@@ -1,0 +1,108 @@
+.upload-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+
+    /* Modal Content/Box */
+  .upload-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 30%;
+    text-align: center;
+  }
+
+  .upload-modal-content * {
+    display: inline-block;
+    font-size: 18px;
+  }
+
+    /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .upload-modal-content form button {
+    width: 100px;
+    padding: 10px 0px;
+    background-color: rgb(98, 109, 227);
+    text-decoration: none;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin: auto;
+  }
+
+.upload-modal-content div.separator {
+  margin: 30px 0px;
+  display: flex;
+}
+
+#dragdrop-zone {
+  width: 400px;
+  height: 350px;
+  border: 1px solid lightgray;
+}
+
+.upload-form {
+  display: block;
+}
+
+.upload-form form {
+  width: 100%;
+}
+
+.upload-form form button {
+  margin-top: 20px;
+  display: block;
+}
+
+.separator p {
+  margin: 0px 10px;
+}
+
+.dragdrop-content img {
+  display: block;
+  margin: auto;
+  width: 170px;
+}
+
+.dragdrop-content {
+  position: relative;
+  margin: auto auto;
+  top: 60px;
+}
+
+.dragdrop-content p {
+  margin: 0;
+  font-size: 18px;
+}
+
+hr {
+  border: none;
+  border-top: #e8e8e8 1px solid;
+  width: 100%;
+  height: 1px;
+}

@@ -7,6 +7,7 @@ ini_set('display_errors', 1);
 addFile();
 
 header('Location: userspace.php');
+exit();
 function addFile()
 {
     $userid = $_SESSION['userID'];

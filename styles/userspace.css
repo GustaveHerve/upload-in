@@ -13,6 +13,68 @@
     display: inline-block;
 }
 
+header {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    flex: 0 0 250px;
+}
+
+header h2 {
+    flex: 0 1 60%;
+}
+
+.profil {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    flex: 0 1 300px;
+    position: relative;
+}
+
+.profil:hover {
+    color:rgb(98, 109, 227);
+}
+
+.profil-mail {
+    flex: 1 1 230px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.profil-icon {
+    text-align: center;
+}
+
+.profil-icon img {
+    width: 40px;
+}
+
+.profil:hover #profil-dropdown {
+    z-index: 1;
+    display: block;
+}
+
+#profil-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    white-space: nowrap;
+    text-align: center;
+    width: 70%;
+}
+
+#profil-dropdown a {
+    display: block;
+    padding: 6px 12px;
+    background-color: rgb(222, 222, 222);
+    text-decoration: none;
+    color: black;
+}
+
 #file-space{
     overflow: scroll;
     height: 600px;

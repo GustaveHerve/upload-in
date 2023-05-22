@@ -9,7 +9,6 @@ function addToFileList($row)
     $toadd .= '<div class="file-lastmodified">' . $row['lastModified'] .  '</div>';
     $toadd .= '<div class="file-size">' . printSize($row['fileSize']) .  '</div>';
     $toadd .= '<div class="actions"> <a class="action-button" href="uploads/' . $row['fileName'] . '" download ><img src="images/download.png"></a>';
-    //TODO : javascript delete function
     $toadd .= '<a class="action-button" onclick="deleteFile(this)"><img src="images/trash-bin.png"></a></div>';
     $toadd .= '</div>';
     echo $toadd;

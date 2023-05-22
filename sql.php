@@ -15,5 +15,9 @@ function addUser($sqli, $email, $passwd)
     VALUES ('$email', '$passwd')";
 
     $sqli->query($query);
+    $query = "SELECT id FROM MyGuests
+    WHERE email = '$email'";
+    $id = $sqli->query($query);
+    return $id->fetch_column();
 }
 ?>

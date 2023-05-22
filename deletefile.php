@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 deleteFile();
 
 header('Location: userspace.php');
+exit();
 function deleteFile()
 {
     if ($_SERVER['REQUEST_METHOD'] == 'POST')

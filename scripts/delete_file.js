@@ -1,8 +1,8 @@
 //Modal windows inspired by w3 tutorial: https://www.w3schools.com/howto/howto_css_modals.asp
 
-var modal = document.getElementById("delete-file-modal");
-var prompt = document.getElementById("prompt");
-var invisibleInput = document.getElementById("invisibleinput");
+let modal = document.getElementById("delete-file-modal");
+let prompt = document.getElementById("prompt");
+let invisibleInput = document.getElementById("invisibleinput");
 
 window.onclick = function(event) {
     if (event.target == modal)

@@ -23,14 +23,24 @@
         
         $conn = new mysqli("localhost", "root", "", "users");
 
+        $id = -1;
         if ($conn->connect_error)
             die("Connection failed: " . $conn->connect_error);
         if (!user_alreadyexists($conn, $email))
-            addUser($conn, $email, $passwd);
+            $id = addUser($conn, $email, $passwd);
         else
             $accountErr = "This email is associated to an existing account.";
 
-        $conn->close();
+        if ($id != -1)
+        {
+            session_destroy();
+            session_start();
+            $_SESSION['user'] = $email;
+            $_SESSION['userID'] = $id;
+            header('Location: userspace.php');
+            $conn->close();
+            exit();
+        }
     }
 ?>
 
