@@ -26,10 +26,10 @@ if (isset($_SESSION["user"]))
         $email = $passwd = "";
         if (!empty($_POST["email"]))
             $email = test_input($_POST["email"]);
-        
+
         if (!empty($_POST["passwd"]))
             $passwd = test_input($_POST["passwd"]);
-        
+
         $conn = new mysqli("localhost", "root", "", "users");
 
         if ($conn->connect_error)
@@ -39,7 +39,7 @@ if (isset($_SESSION["user"]))
             $accountErr = "No account with this email/password combination were found";
         else
         {
-            $query = "SELECT * FROM MyGuests
+            $query = "SELECT * FROM User
             WHERE email='$email'";
             $res = $conn->query($query);
 

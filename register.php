@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if (isset($_SESSION['user']))
+    {
+        header('Location: userspace.php');
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +26,10 @@
     {
         if (!empty($_POST["email"]))
             $email = test_input($_POST["email"]);
-        
+
         if (!empty($_POST["passwd"]))
             $passwd = test_input($_POST["passwd"]);
-        
+
         $conn = new mysqli("localhost", "root", "", "users");
 
         $id = -1;
@@ -33,8 +42,6 @@
 
         if ($id != -1)
         {
-            session_destroy();
-            session_start();
             $_SESSION['user'] = $email;
             $_SESSION['userID'] = $id;
             header('Location: userspace.php');

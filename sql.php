@@ -11,11 +11,11 @@ function connectDB($server, $username, $password, $db)
 
 function addUser($sqli, $email, $passwd)
 {
-    $query = "INSERT INTO MyGuests (email, passwd)
+    $query = "INSERT INTO User (email, passwd)
     VALUES ('$email', '$passwd')";
 
     $sqli->query($query);
-    $query = "SELECT id FROM MyGuests
+    $query = "SELECT id FROM User
     WHERE email = '$email'";
     $id = $sqli->query($query);
     return $id->fetch_column();

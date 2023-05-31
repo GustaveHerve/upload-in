@@ -1,3 +1,8 @@
+<?php
+session_start();
+//TODO add database creation if not exists
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +17,6 @@
             <h1>Upload'<span style="color:rgb(98, 109, 227)">in</span><br>your<br><span style="color:rgb(98, 109, 227);"><span id="catchphrase"></span><span id="cursor"></span></span></h1>
             <nav>
                 <?php
-                session_start();
                 if (!isset($_SESSION['userID']))
                 {
                     echo '<a href="register.php">Register</a>';

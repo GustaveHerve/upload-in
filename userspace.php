@@ -1,7 +1,7 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();
 
 if (!isset($_SESSION["user"]))
 {
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             </div>
         </div>
     </header>
- 
+
     <div id="upload-button" onclick="uploadFile()">
         <img src="images/plus.png">
         <a>Upload a file</a>

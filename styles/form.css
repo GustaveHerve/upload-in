@@ -68,3 +68,27 @@ div.formbox form button:hover  {
     background-color: rgb(138, 145, 229);
     cursor: pointer;
 }
+
+@media only screen and (max-width: 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        margin-bottom: 50%;
+    }
+
+    div.formbox {
+        width: auto;
+        display: block;
+        margin: auto;
+        padding: 0;
+        border: none;
+        text-align: center;
+    }
+
+    div.formbox input {
+        width: 80%;
+    }
+}
