@@ -1,7 +1,5 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 deleteFile();
 
@@ -15,7 +13,7 @@ function deleteFile()
         $userID = $_SESSION['userID'];
         $query = "DELETE FROM Data
         WHERE fileName = '$fileToDelete' AND userID = $userID";
-        $filePath = "uploads/" . $fileToDelete;
+        $filePath = ".uploads/$userID/" . $fileToDelete;
         unlink($filePath);
         $conn = new mysqli("localhost", "root", "", "users");
         $conn->query($query);

@@ -171,7 +171,7 @@ div.file {
     background-color: rgb(138, 145, 229);
 }
 
-@media only screen and (min-width: 480px) and (max-width: 700px)
+@media only screen and (min-width: 480px) and (max-width: 780px)
 {
     h2 {
         display: none;
@@ -213,9 +213,4 @@ div.file {
         flex: 0 0 20%;
         justify-content: flex-end;
     }
-
-    #dragdrop-zone, .upload-modal-content div.separator {
-        display: none !important;
-    }
-
 }

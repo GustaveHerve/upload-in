@@ -106,3 +106,13 @@ hr {
   width: 100%;
   height: 1px;
 }
+
+@media only screen and (max-width:630px) {
+  .upload-modal-content {
+    width: auto;
+  }
+
+  #dragdrop-zone, .upload-modal-content div.separator {
+        display: none !important;
+  }
+}

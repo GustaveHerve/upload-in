@@ -1,7 +1,5 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 if (!isset($_SESSION["user"]))
 {
@@ -62,8 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         <div id="file-list">
         <?php
         require 'filelist.php';
-        error_reporting(E_ALL);
-        ini_set('display_errors', 1);
         $conn = new mysqli("localhost", "root", "", "users");
         $userID = $_SESSION['userID'];
         $query = "SELECT * FROM Data
@@ -94,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             <span class="close" onclick="closeUploadModal()">&times;</span><br />
             <div class="upload-form">
                 <form action="fileupload.php" method="post" enctype="multipart/form-data">
-                    <input type="file" id="fileupload" name="filename">
+                    <input type="file" id="fileupload" name="filename" required>
                     <button type="submit">Upload</button>
                 </form>
             </div><br />

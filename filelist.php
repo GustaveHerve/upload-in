@@ -1,14 +1,13 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 function addToFileList($row)
 {
+    $path = ".uploads/" . $row['userID'] . "/" . $row['fileName'];
     $toadd = '<div class="file">';
-    $toadd .= '<div class="file-name"><a href=uploads/' . $row['fileName'] . ' download >' . $row['fileName'] .  '</a> </div>';
+    $toadd .= '<div class="file-name"><a href=' . $path . ' download >' . $row['fileName'] .  '</a> </div>';
     $toadd .= '<div class="file-lastmodified">' . $row['lastModified'] .  '</div>';
     $toadd .= '<div class="file-size">' . printSize($row['fileSize']) .  '</div>';
-    $toadd .= '<div class="actions"> <a class="action-button" href="uploads/' . $row['fileName'] . '" download ><img src="images/download.png"></a>';
+    $toadd .= '<div class="actions"> <a class="action-button" href="' . $path . '" download ><img src="images/download.png"></a>';
     $toadd .= '<a class="action-button" onclick="deleteFile(this)"><img src="images/trash-bin.png"></a></div>';
     $toadd .= '</div>';
     echo $toadd;
