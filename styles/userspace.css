@@ -106,7 +106,7 @@ div.file {
 }
 
 .file-name {
-    flex: 0 1 600px;
+    flex: 1 1 400px;
     text-align: left;
 }
 
@@ -115,7 +115,8 @@ div.file {
 }
 
 .file-size {
-    flex: 0 0 300px;
+    flex: 0 1 300px;
+    white-space: nowrap;
 }
 
 .actions {
@@ -168,4 +169,53 @@ div.file {
 
 #upload-button:hover {
     background-color: rgb(138, 145, 229);
+}
+
+@media only screen and (min-width: 480px) and (max-width: 700px)
+{
+    h2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    h2 {
+        display: none;
+    }
+
+    .profil {
+        display: none;
+    }
+
+    .file-name {
+        flex: 0 1 50%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .file-name a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .file-lastmodified {
+        display: none;
+    }
+
+    .file-size {
+        flex-basis: 30%;
+        flex-grow: 1;
+    }
+
+    .actions {
+        flex: 0 0 20%;
+        justify-content: flex-end;
+    }
+
+    #dragdrop-zone, .upload-modal-content div.separator {
+        display: none !important;
+    }
+
 }

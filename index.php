@@ -14,7 +14,7 @@ session_start();
 <body>
     <div id="first-part">
         <header>
-            <h1>Upload'<span style="color:rgb(98, 109, 227)">in</span><br>your<br><span style="color:rgb(98, 109, 227);"><span id="catchphrase"></span><span id="cursor"></span></span></h1>
+            <h1>Upload'<span style="color:rgb(98, 109, 227)">in</span><br>your<br><span style="color:rgb(98, 109, 227);"><span id="catchphrase"></span><span id="cursor">_</span></span></h1>
             <nav>
                 <?php
                 if (!isset($_SESSION['userID']))

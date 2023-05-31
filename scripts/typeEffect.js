@@ -43,8 +43,14 @@ function typingCycle() {
 
 function cursorBlink() {
     let cursor = document.getElementById("cursor");
+    /*
     if (cursor.innerText.length != 0)
         cursor.innerText = "";
     else
         cursor.innerText = "_";
+        */
+    if (cursor.style.color != "rgb(246, 246, 246)")
+        cursor.style.color = "rgb(246, 246, 246)";
+    else
+        cursor.style.color = "#626DE3";
 }
