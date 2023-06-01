@@ -24,7 +24,7 @@ session_start();
                 }
                 else
                 {
-                    echo '<div class="profil">';
+                    echo '<div class="profil" onclick=toggleDropdown()>';
                     echo '<div class="profil-mail"><p>' . $_SESSION["user"] . '</p></div>';
                     echo '<div class="profil-icon"><img src="images/account.png"></div>';
                     echo '<div id="profil-dropdown"><a href="userspace.php">My storage</a><a href="logout.php">Log out</a></div>';
@@ -54,5 +54,6 @@ session_start();
         </footer>
     </div>
     <script src="scripts/typeEffect.js"></script>
+    <script src="scripts/dropdown.js"></script>
 </body>
 </html>

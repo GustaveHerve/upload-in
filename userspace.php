@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+//Prevent accessing the page if not logged in
 if (!isset($_SESSION["user"]))
 {
     session_destroy();
@@ -8,6 +9,7 @@ if (!isset($_SESSION["user"]))
     exit();
 }
 
+//Log out handler
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     session_unset();
@@ -31,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     <header>
         <h1 id="logo"><a href="index.php">Upload'<span style="color:rgb(98, 109, 227);">in</span></a></h1>
         <h2>My storage space</h2>
-        <div class="profil">
+        <div class="profil" onclick=toggleDropdown()>
             <div class="profil-mail">
                 <p><?php echo $_SESSION["user"];?></p>
             </div>
@@ -90,25 +92,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             <span class="close" onclick="closeUploadModal()">&times;</span><br />
             <div class="upload-form">
                 <form action="fileupload.php" method="post" enctype="multipart/form-data">
-                    <input type="file" id="fileupload" name="filename" required>
+                    <input type="file" id="fileupload" name="filename[]" required>
                     <button type="submit">Upload</button>
                 </form>
             </div><br />
+            <!--
             <div class="separator">
                 <hr>
                 <p>or</p>
                 <hr>
             </div><br />
-            <div id="dragdrop-zone">
+            <div id="dragdrop-zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
                 <div class="dragdrop-content">
                     <img src="images/upload.png">
                     <p>Drag and drop your file here</p>
                 </div>
             </div>
+        -->
         </div>
     </div>
 
     <script src="scripts/delete_file.js"></script>
     <script src="scripts/upload_file.js"></script>
+    <script src="scripts/dropdown.js"></script>
 </body>
 </html>

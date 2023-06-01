@@ -32,6 +32,7 @@ header h2 {
     margin-right: 20px;
     flex: 0 1 300px;
     position: relative;
+    cursor: pointer;
 }
 
 .profil:hover {
@@ -52,11 +53,6 @@ header h2 {
     width: 40px;
 }
 
-.profil:hover #profil-dropdown {
-    z-index: 1;
-    display: block;
-}
-
 #profil-dropdown {
     display: none;
     position: absolute;
@@ -73,6 +69,11 @@ header h2 {
     background-color: rgb(222, 222, 222);
     text-decoration: none;
     color: black;
+    font-weight: bold;
+}
+
+#profil-dropdown a:hover {
+    background-color:  rgb(186, 185, 185);
 }
 
 #file-space{
@@ -185,6 +186,10 @@ div.file {
     }
 
     .profil {
+        justify-content: flex-end;
+    }
+
+    .profil-mail {
         display: none;
     }
 

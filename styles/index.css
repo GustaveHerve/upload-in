@@ -105,15 +105,20 @@ nav a:hover {
     margin-right: 20px;
     flex: 0 1 300px;
     position: relative;
+    cursor: pointer;
 }
 
 .profil:hover {
     color:rgb(98, 109, 227);
 }
+
+/*
+
 .profil:hover #profil-dropdown {
     z-index: 1;
     display: block;
 }
+*/
 
 #profil-dropdown {
     display: none;

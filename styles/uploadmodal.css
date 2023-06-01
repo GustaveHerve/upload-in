@@ -60,11 +60,13 @@
   display: flex;
 }
 
+/*
 #dragdrop-zone {
   width: 400px;
   height: 350px;
   border: 1px solid lightgray;
 }
+*/
 
 .upload-form {
   display: block;
@@ -79,9 +81,11 @@
   display: block;
 }
 
+/*
 .separator p {
   margin: 0px 10px;
 }
+
 
 .dragdrop-content img {
   display: block;
@@ -99,6 +103,7 @@
   margin: 0;
   font-size: 18px;
 }
+*/
 
 hr {
   border: none;
@@ -112,7 +117,9 @@ hr {
     width: auto;
   }
 
+  /*
   #dragdrop-zone, .upload-modal-content div.separator {
         display: none !important;
   }
+  */
 }

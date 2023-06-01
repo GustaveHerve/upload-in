@@ -24,15 +24,19 @@ function addFile()
     $fullname = $_FILES['filename']['name'];
 
     $query = "SELECT * FROM Data
-    WHERE fileName = '$fullname'";
+    WHERE fileName = '$fullname' AND userID = $userid";
     $res = $conn->query($query);
     $i = 0;
     while ($res->num_rows > 0)
     {
         $i += 1;
         $name = $temp[0] . "($i)";
+        if (sizeof($temp) > 0)
+            $full = $name . '.' . $temp[1];
+        else
+            $full = $name;
         $query = "SELECT * FROM Data
-        WHERE fileName = '$name'";
+        WHERE fileName = '$full' AND userID = $userid";
         $res = $conn->query($query);
     }
 
