@@ -59,7 +59,7 @@
         <form id="registerForm" action="register.php" method="post" onsubmit="return validateInput();">
             <div>
                 <label for="email">Email address:</label><br>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email address">
                 <span id="emailErr"><?php echo $accountErr ?></span><br>
             </div>
             <div>

@@ -7,6 +7,7 @@ function validateInput()
     {
         isValid = false;
         displayErr("emailErr", "Please enter your email address");
+        document.getElementById("email").style.borderColor = "red";
     }
     else
         clearErr("emailErr");
@@ -14,6 +15,7 @@ function validateInput()
     {
         isValid = false;
         displayErr("passwdErr", "Please enter your password");
+        document.getElementById("passwd").style.borderColor = "red";
     }
     else
         clearErr("passwdErr");

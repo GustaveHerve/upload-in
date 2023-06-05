@@ -61,7 +61,7 @@ if (isset($_SESSION["user"]))
         <form id="loginForm" action="login.php" method="post" onsubmit="return validateInput();">
             <div>
                 <label for="email">Email address:</label><br>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" <?php if (isset($_POST['email'])) echo 'value="'.$_POST['email'].'"'; ?>) required>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" <?php if (isset($_POST['email'])) echo 'value="'.$_POST['email'].'"'; ?>)>
                 <span id="emailErr"><?php echo $accountErr ?></span><br>
             </div>
             <div>
