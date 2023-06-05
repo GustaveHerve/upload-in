@@ -3,7 +3,7 @@ session_start();
 
 addFile();
 
-header('Location: userspace.php');
+header('Location: userspace.php'); //Redirect back to userspace page when done
 exit();
 function addFile()
 {

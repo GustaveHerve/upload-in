@@ -17,8 +17,6 @@ if (isset($_SESSION["user"]))
 <body>
 <?php
     require 'formvalidation.php';
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
 
     $accountErr = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST")

@@ -19,8 +19,7 @@
 <?php
     require 'formvalidation.php';
     require 'sql.php';
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+
     $email = $passwd = $accountErr = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
