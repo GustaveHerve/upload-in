@@ -9,13 +9,14 @@ function deleteFile()
 {
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
+        $conn = new mysqli("localhost", "root", "", "users");
         $fileToDelete = $_POST['filetodelete'];
+        $fileToDelete_esc = $conn->real_escape_string($fileToDelete);
         $userID = $_SESSION['userID'];
         $query = "DELETE FROM Data
-        WHERE fileName = '$fileToDelete' AND userID = $userID";
+        WHERE fileName = '$fileToDelete_esc' AND userID = $userID";
         $filePath = ".uploads/$userID/" . $fileToDelete;
         unlink($filePath);
-        $conn = new mysqli("localhost", "root", "", "users");
         $conn->query($query);
         $conn->close();
     }

@@ -19,38 +19,46 @@ function addFile()
 
     //This section handles file duplication by adding (i) at the end of the filename
     //Remove temporarly file extension if there is one
-    $temp = explode('.', $_FILES['filename']['name']);
+    $temp = explode('.', $_FILES['filename']['name'][0]);
     $name = $temp[0];
-    $fullname = $_FILES['filename']['name'];
+    $name_esc = $conn->real_escape_string($name);
+
+    $fullname = $_FILES['filename']['name'][0];
+    $fullname_esc = $conn->real_escape_string($fullname);
 
     $query = "SELECT * FROM Data
-    WHERE fileName = '$fullname' AND userID = $userid";
+    WHERE fileName = '$fullname_esc' AND userID = $userid";
     $res = $conn->query($query);
     $i = 0;
     while ($res->num_rows > 0)
     {
         $i += 1;
         $name = $temp[0] . "($i)";
+        $name_esc = $conn->real_escape_string($name);
         if (sizeof($temp) > 0)
             $full = $name . '.' . $temp[1];
         else
             $full = $name;
+        $full_esc = $conn->real_escape_string($full);
         $query = "SELECT * FROM Data
-        WHERE fileName = '$full' AND userID = $userid";
+        WHERE fileName = '$full_esc' AND userID = $userid";
         $res = $conn->query($query);
     }
 
     //If there is a file extension, restore it
     if (sizeof($temp) > 1)
+    {
         $name = $name . '.' . $temp[1];
+        $name_esc = $conn->real_escape_string($name);
+    }
 
     $target_file = $target_dir . $name;
 
     //Move file to upload folder
-    move_uploaded_file($_FILES["filename"]["tmp_name"], $target_file);
+    move_uploaded_file($_FILES["filename"]["tmp_name"][0], $target_file);
 
-    $filename = $name;
-    $filesize = $_FILES['filename']['size'];
+    $filename = $name_esc;
+    $filesize = $_FILES['filename']['size'][0];
     if (sizeof($temp) > 1)
         $filetype = $temp[1];
     else
